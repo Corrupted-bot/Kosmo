@@ -1,0 +1,14 @@
+Cuenta Admin(gerente_ventas) - Puede aprobar las solicitudes, actualizarlas y eliminarlas 
+
+usuario: admin
+contraseña: quimica2000
+
+Cuenta beneficiario con acceso a crear "UNA" solicitud
+
+usuario: corrupted
+contraseña: quimica2000
+
+Cuenta beneficiario con solicitud creada - Puede hacerle segumiento a su solicitud
+
+usuario: nashe
+contraseña: quimica2000

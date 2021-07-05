@@ -7,12 +7,21 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/solicitudes">Solicitudes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disable" aria-current="page" href="#">Seguimiento</a>
-        </li>
+          {% if not user.es_beneficiario %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/solicitudes">Solicitudes</a>
+            </li>
+          {% endif %}
+          {% if user.es_beneficiario and user.cant_solicitud == False%}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/solicitud/create">Enviar Solicitud</a>
+          </li>     
+          {% endif %}     
+          {% if user.es_beneficiario and user.cant_solicitud%}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/seguimiento">Seguimiento</a>
+            </li>
+          {% endif %}
       </ul>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">

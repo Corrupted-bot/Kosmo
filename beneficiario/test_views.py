@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from .models import Solicitud, SolicitudFacade
+
 
 class SolicitudViewsUnitTestCase(TestCase):
     def setUp(self):
@@ -21,8 +23,4 @@ class SolicitudViewsUnitTestCase(TestCase):
         response = self.client.post(reverse("login"), self.credentials, follow=True)
         self.assertTrue(response.context["user"].is_authenticated)
 
-    def test_solicitud(self):
-        self.client.login(**self.credentials)
-        response= self.client.get(reverse("solicitudes"),follow=True)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Diego", 0)
+

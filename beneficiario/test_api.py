@@ -28,7 +28,7 @@ class ApiTestCase(TestCase):
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
     
     def test_api_solicitud_retrieve(self):
-        solicitud = Solicitud.solicitudes.get(id=27)
+        solicitud = Solicitud.solicitudes.get(id=22)
         
         response = self.client.get(reverse("api_solicitud_rud",kwargs={"pk": solicitud.id}),format="json")
 
@@ -36,7 +36,7 @@ class ApiTestCase(TestCase):
         self.assertContains(response,solicitud)
     
     def test_api_solicitud_update(self):
-        solicitud = Solicitud.solicitudes.get(id=32)
+        solicitud = Solicitud.solicitudes.get(id=23)
         update = {"nombre":"Diego Lopez"}
         response = self.client.patch(
             reverse("api_solicitud_rud",kwargs={"pk":solicitud.id}),
@@ -45,7 +45,7 @@ class ApiTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_api_solicitud_delete(self):
-        solicitud = Solicitud.solicitudes.get(id=35)
+        solicitud = Solicitud.solicitudes.get(id=33)
         response = self.client.delete(
             reverse("api_solicitud_rud", kwargs={"pk":solicitud.id}),
             format="json",
