@@ -1,0 +1,2 @@
+en la carpeta server "npm i cors mysql"
+en la carpeta kosmo-app " npm i axios react-router-dom"
