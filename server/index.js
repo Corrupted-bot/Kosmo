@@ -122,6 +122,78 @@ app.post('/diagnostico', (req, res) => {
 });
 
 
+// REGISTrO puesto
+app.post('/puestotrabajo', (req, res) => {
+    
+    
+    
+    
+    
+    const nombre = req.body.nombre;
+    const descripcion = req.body.descripcion;
+    const horario = req.body.horario;
+    const dethorario = req.body.dethorario;
+    const vestuario = req.body.vestuario;
+    const detvestuario = req.body.detvestuario;
+    const formacion = req.body.formacion;
+    const detformacion = req.body.detformacion;
+    const pension = req.body.pension;
+    const detpension = req.body.detpension;
+    const relacion = req.body.relacion;
+    const detrelacion = req.body.detrelacion;
+    const seguro = req.body.seguro;
+    const detseguro = req.body.detseguro;
+    const vacaciones = req.body.vacaciones;
+    const detvacaciones = req.body.detvacaciones;
+    const evaluacionriesgo = req.body.evaluacionriesgo;
+    const detriesgo = req.body.detriesgo;
+    const evaluacionrealizada = req.body.evaluacionrealizada;
+    const detevaluacion = req.body.detevaluacion;
+    const promocion = req.body.promocion;
+    const flexibilidad = req.body.flexibilidad;
+    const pie = req.body.pie;
+    const caminar = req.body.caminar;
+    const sentado = req.body.sentado;
+    const levantar = req.body.levantar;
+    const acarrear = req.body.acarrear;
+    const empujar = req.body.empujar;
+    const subir = req.body.subir;
+    const equilibrio = req.body.equilibrio;
+    const encorvar = req.body.encorvar;
+    const arrodillar = req.body.arrodillar;
+    const manos = req.body.manos;
+    const destreza = req.body.destreza;
+    const vision = req.body.vision;
+    const audicion = req.body.audicion;
+    const adaptacion = req.body.adaptacion;
+    const supervision = req.body.supervision;
+
+
+
+    db.query("INSERT INTO puestotrabajos (nombrepuesto, descripcionpuesto, controlhorario, detallescontrolhorario, normasvestuario, detallesvestuario, formacioncasa, detallesformacion,pensionempresa,detallespension,relacionfamilia,detallesrelacion,seguroenfermedad,detallesseguro,vacaciones,detallesvacaciones,evaluacionderiesgo,detallesriesgo,evaluacionrealizada,detallesevaluacion,promocionlaboral,flexibilidad,estardepie,caminar,estarsentado,levantar,acarrear,empujar,subir,equilibrio,encorvarse,arrodillarse,manipularmanos,manipulardestreza,vision,audicion,adaptacion,supervision) VALUES (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    [nombre, descripcion, horario,dethorario,vestuario,detvestuario,formacion,detformacion,pension,detpension,relacion,detrelacion,seguro,detseguro,vacaciones,detvacaciones,
+        evaluacionriesgo,detriesgo,evaluacionrealizada,detevaluacion,promocion,flexibilidad,pie,caminar,sentado,levantar,acarrear,empujar,subir,equilibrio,encorvar,arrodillar,
+        manos,destreza,vision,audicion,adaptacion,supervision], 
+        (err, result) => {
+        console.log(err);
+    });
+});
+
+app.post('/add-diagnostico-1',(req,res)=>{
+    let datosArreglo = [];
+    db.query("SELECT * FROM empresas",function (err, result, fields) {
+        for (let value of result) {
+            datosArreglo.push([value.NombreEmpresa,value.RutEmpresa]);
+            value += 1;
+        }
+        console.log(datosArreglo)
+        res.send(result);
+        // res.send(datosArreglo);
+      });
+    
+});
+
+
 //Iniciando la api 
 app.listen(PORT, () => {
     console.log(`El servidor esta corriendo en el puerto ${PORT}`);

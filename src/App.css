@@ -4,7 +4,7 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3A405A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,28 +18,48 @@ table, th, td {
 }
 
 .alinear{
+  margin-top: 41px;
   text-align:center;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
 }
 
-
+.card{
+  margin-top: 89px;
+  color: #000;
+}
 .formulario{
-  width:300px;
+  width:300px; 
+  /* width: 535px; */
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
+  margin-top: 41px;
+  background: #30354B;
+  box-shadow: 10px 5px 5px black;
+}
+.formulario-2{
+  width: 600px;
+}
+.formulario-2 label{
+  width: 214px;
 }
 .formulario label{
   width:79px;
+  /* width: 214px; */
 	font-weight:bold;
 	display:inline-block;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+  margin-top: 30px;
+}
+
 .formulario input[type="text"],
 .formulario input[type="email"]{
-	width:180px;
+  width: 246px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -67,7 +87,7 @@ textarea{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} 
 
 input {
   width: 250px;

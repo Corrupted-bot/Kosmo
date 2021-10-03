@@ -7,7 +7,8 @@ import Registro from "./components/Registro";
 import Inicio from "./components/Inicio";
 import CriteriosEvaluacion from "./components/CriteriosEvaluacion";
 import Diagnostico from "./components/Diagnostico";
-
+import Dashboard from "./components/Dashboard";
+import PuestoTrabajo from "./components/PuestoTrabajo";
 // Pack install 
 // npm install react-router-dom
 
@@ -44,18 +45,22 @@ function App() {
               <li className="nav-item">
               <NavLink to="/add-evaluacion" className="btn btn-dark" activeClassName="active">Criterios de Evaluacion</NavLink>
               </li>
+              <li className="nav-item">
+              <NavLink to="/puestotrabajo" className="btn btn-dark" activeClassName="active">Puesto de Trabajo</NavLink>
+              </li>
             </ul>
           </div>
         </div>  
       </nav>
       <div className = "App App-header">
         <Switch>
+        <Route path="/puestotrabajo"><PuestoTrabajo/></Route> 
           <Route path="/registro"><Registro/></Route>
-          <Route path="/login"><Login/></Route>
+          <Route path="/dashboard"><Dashboard/></Route>
+          <Route path="/login" ><Login/></Route>
           <Route path="/add-evaluacion"><CriteriosEvaluacion/></Route>
           <Route path="/diagnostico"><Diagnostico/></Route>
           <Route path="/"><Inicio/></Route>
-          
         </Switch>
     </div>
     </Router>

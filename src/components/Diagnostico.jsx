@@ -1,5 +1,6 @@
 import axios from "axios";
 import React , { useState }from "react";
+import Cards from './Cards';
 
 
 //import Axios from "axios";
@@ -42,41 +43,48 @@ const Diagnostico = () => {
     return (
         
         <>
-        <div className = "diagnostico">
+        <div className = "diagnostico formulario formulario-2">
             <h1> Agregar Empresa </h1>
+            <br/>
+            <h2>Antecedentes de la organización</h2>
             
-            <input type = "text" placeholder = "Nombre empresa"
+            <input type = "text" placeholder = "Nombre de la organización"
               onChange={(e) => { 
                 setNombreEmpresa(e.target.value);
                 }}
               
               /> 
             <br/>
+            <br/>
 
-            <input type = "text" placeholder = "Rut Empresa"
+            <input type = "text" placeholder = "Rut organización"
               onChange={(e) => { 
                 setrutEmpresa(e.target.value);
                 }}
               
               /> 
               <br/>
+              <br/>
 
-            <input type = "text" placeholder = "Giro Empresa"
+            <input type = "text" placeholder = "Giro organización"
               onChange={(e) => { 
                 setgiroEmpresa(e.target.value);
                 }}
               
               /> 
               <br/>
+              <br/>
 
-            <input type = "text" placeholder = "Direccion Empresa"
+            <input type = "text" placeholder = "Direccion de la organización"
               onChange={(e) => { 
                 setdireccionEmpresa(e.target.value);
                 }}
               
               /> 
             <br/>
-            <input type = "text" placeholder = "Mail Empresa"
+            <br/>
+
+            <input type = "text" placeholder = "Email de la organización"
               onChange={(e) => { 
                 setmailEmpresa(e.target.value);
                 }}
@@ -84,7 +92,9 @@ const Diagnostico = () => {
               /> 
 
                 <br/>
-            <input type = "text" placeholder = "Telefono Empresa"
+                <br/>
+
+            <input type = "text" placeholder = "Telefono de la organización"
               onChange={(e) => { 
                 settelefonoEmpresa(e.target.value);
                 }}
@@ -92,8 +102,9 @@ const Diagnostico = () => {
               /> 
 
                 <br/>
+                <br/>
 
-            <input type = "text" placeholder = "Cargo Empresa"
+            <input type = "text" placeholder = "Cargo en la organización"
               onChange={(e) => { 
                 setcargoEmpresa(e.target.value);
                 }}
@@ -101,7 +112,9 @@ const Diagnostico = () => {
               /> 
 
                 <br/>
-            <input type = "text" placeholder = "Dotacion Empresa"
+                <br/>
+
+            <input type = "text" placeholder = "Dotacion en la organización"
               onChange={(e) => { 
                 setdotacionEmpresa(e.target.value);
                 }}
@@ -109,12 +122,21 @@ const Diagnostico = () => {
               /> 
 
             <br/>
+            <br/>
 
-              <button className = "custom-btn btn-11"  onClick={registerr}> Agregar           </button>
+              <button className = "custom-btn btn-11"  onClick={registerr}> Agregar </button>
         </div>
+        <div>
+          <hr></hr>
+          <div>
+            <Cards />
+          </div>
+        </div>
+        <hr></hr>
+        <footer>El mismísimo y verdadero footer</footer>
         </>
     );
-}
+  }     
 
 
 export default Diagnostico;

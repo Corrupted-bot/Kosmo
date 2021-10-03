@@ -18,7 +18,7 @@ const Registro = () => {
     
     return (
         <div>
-            <div className="registro">
+            <div className="formulario registro">
                 <h1> Registro </h1>
                 <label> Usuario </label>
                 <input type="text" 
