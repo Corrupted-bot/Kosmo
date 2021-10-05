@@ -1,6 +1,8 @@
 # Getting Started with Create React App
+Para iniciar el Proyecto es necesario instalar las dependecias de node, los paquetes necesarios son: "axios react-router-dom cors mysql"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para inicializarlo es necesario clonar el repositorio, en la carpeta raiz instalar npm con el comando "npm install" y los paquetes con el 
+comando "npm i axios react-router-dom cors mysql".
 
 ## Available Scripts
 
