@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import Swal from 'sweetalert2';
 import { useHistory } from "react-router-dom";
+import useAuth from "../auth/useAuth";
 
 const Login = () => {
   // Variables de entorno para capturar los datos
@@ -12,6 +13,8 @@ const Login = () => {
 
   // Variables necesarias para la redireccion
   let history = useHistory();
+
+  const auth = useAuth();
 
   function handleClick() {
     history.push("/dashboard");
@@ -40,14 +43,16 @@ const Login = () => {
         })
         Toast.fire({
           icon: 'success',
-          title: `Iniciaste Sesion: ${loginStatus}`
+          title: `Iniciaste Sesion: ${response.data[0].username}`
         })
-
         //Redireccionar si el usuario es correcto
+        auth.login({id:response.data[0].id,username:response.data[0].username});
         handleClick();
       }
     });
   }
+
+
 
   return (
     <div>

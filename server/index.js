@@ -125,10 +125,6 @@ app.post('/diagnostico', (req, res) => {
 // REGISTrO puesto
 app.post('/puestotrabajo', (req, res) => {
     
-    
-    
-    
-    
     const nombre = req.body.nombre;
     const descripcion = req.body.descripcion;
     const horario = req.body.horario;

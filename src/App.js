@@ -9,6 +9,10 @@ import CriteriosEvaluacion from "./components/CriteriosEvaluacion";
 import Diagnostico from "./components/Diagnostico";
 import Dashboard from "./components/Dashboard";
 import PuestoTrabajo from "./components/PuestoTrabajo";
+import PrivateRouters from "./components/routers/PrivateRouters";
+import AuthProvider from "./auth/AuthProvider";
+import Navbar from "./components/Navbar";
+
 // Pack install 
 // npm install react-router-dom
 
@@ -16,54 +20,32 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink,
 } from "react-router-dom";
+import PublicRouters from "./components/routers/PublicRouters";
+
 
 
 
 function App() {
-
   return (
-    <Router>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-        {/* <a class="navbar-brand "><img width="70" height="70" src="http://kosmoinclusion.cl/wp-content/uploads/2019/04/logo-kosmo-1.png"/></a> */}
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-              <NavLink to="/" className="btn btn-dark" activeClassName="disable" >Inicio</NavLink>
-              </li>
-              <li className="nav-item">
-              <NavLink to="/login" className="btn btn-dark"  activeClassName="active">Iniciar Sesion</NavLink>
-              </li>
-              <li className="nav-item">
-              <NavLink to="/registro" className="btn btn-dark" activeClassName="active">Registro</NavLink>
-              </li>
-              <li className="nav-item">
-              <NavLink to="/diagnostico" className="btn btn-dark" activeClassName="active">Diagnostico</NavLink>
-              </li>
-              <li className="nav-item">
-              <NavLink to="/add-evaluacion" className="btn btn-dark" activeClassName="active">Criterios de Evaluacion</NavLink>
-              </li>
-              <li className="nav-item">
-              <NavLink to="/puestotrabajo" className="btn btn-dark" activeClassName="active">Puesto de Trabajo</NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>  
-      </nav>
-      <div className = "App App-header">
-        <Switch>
-        <Route path="/puestotrabajo"><PuestoTrabajo/></Route> 
-          <Route path="/registro"><Registro/></Route>
-          <Route path="/dashboard"><Dashboard/></Route>
-          <Route path="/login" ><Login/></Route>
-          <Route path="/add-evaluacion"><CriteriosEvaluacion/></Route>
-          <Route path="/diagnostico"><Diagnostico/></Route>
-          <Route path="/"><Inicio/></Route>
-        </Switch>
-    </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Navbar/>
+        <div className="App App-header">
+          <Switch>
+            <PrivateRouters exact path="/puestotrabajo" component={PuestoTrabajo}/>
+            <PublicRouters exact path="/registro" component={Registro}/>
+            <PrivateRouters exact path="/dashboard" component={Dashboard} />
+            <PublicRouters exact path="/login" component={Login}/>
+            <PrivateRouters exact path="/add-evaluacion" component={CriteriosEvaluacion}/>
+            <PrivateRouters exact path="/diagnostico" component={Diagnostico}/>
+            <Route exact path="/"><Inicio /></Route>
+            <Route path="*"><h1>Error 404</h1></Route>
+
+          </Switch>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
