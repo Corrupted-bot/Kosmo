@@ -1,43 +1,16 @@
-.App {
-  text-align: center;
-}
 
 
-.App-header {
-  background-color: #3A405A;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* font-size: calc(10px + 2vmin); */
-  color: white;
-}
-table, th, td {
-  border: 2px solid black;
-}
-
-.alinear{
-  margin-top: 41px;
-  text-align:center;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-
-.card{
-  margin-top: 89px;
-  color: #000;
-}
-.formulario{
+.formulario{  
   width:300px; 
   /* width: 535px; */
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
   margin-top: 41px;
-  background: #30354B;
+  background: #212529;
   box-shadow: 10px 5px 5px black;
+  color: white;
+  text-align: center;
 }
 .formulario-2{
   width: 600px;
@@ -46,7 +19,7 @@ table, th, td {
   width: 214px;
 }
 .formulario label{
-  width:79px;
+
   /* width: 214px; */
 	font-weight:bold;
 	display:inline-block;
@@ -67,10 +40,13 @@ button:not(:disabled) {
 	margin:8px 0;
 	display:inline-block;
 }
+select {
+  padding: 10px;
+}
 
 textarea{
 	width:100%;
-	height:300px;
+	height:200px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
 	background-color:#f6f6f6;
@@ -80,8 +56,6 @@ textarea{
 	display:block;
 }
 
-
-
 .registro, .login{
   display: flex;
   flex-direction: column;
@@ -89,7 +63,7 @@ textarea{
   align-items: center;
 } 
 
-input {
+.registro input, .login input {
   width: 250px;
   height: 40px;
 }
@@ -146,7 +120,8 @@ input {
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 4px;
+  width: 102%;
 }
 
 .bn5:before {

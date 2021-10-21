@@ -3,14 +3,11 @@ import Card from './Card';
 import Axios from 'axios';
 
 
-
 function Cards() {
 
 
     const [data, setData] = useState([]);
     
-    //obtenerDatos();
-
     useEffect(() => {
         Axios.post('http://localhost:4000/add-diagnostico-1',).then((response) => {
             setData(response.data);
@@ -32,14 +29,12 @@ function Cards() {
         }
     ]
 
-
     return (
         
         <div className="container justify-content-center align-items-center">
             <div className="row">
                 {
                     data.map(datos => (
-
                         info.id = (datos.idEmpresas),
                         info.nombre = (datos.NombreEmpresa),
                         info.rut = (datos.RutEmpresa),

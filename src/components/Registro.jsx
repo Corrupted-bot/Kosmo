@@ -15,7 +15,6 @@ const Registro = () => {
         console.log(response)
       });
     }
-    
     return (
         <div>
             <div className="formulario registro">

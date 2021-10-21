@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from "axios";
 import Swal from 'sweetalert2';
-import '../App.css';
+
 
 
 const PuestoTrabajo = () => {
@@ -114,9 +114,10 @@ const PuestoTrabajo = () => {
 
     return (
         <>
-            <div className="PuestoTrabajo formulario-2 formulario">
-                <h1> Detalles Puesto de trabajo </h1>
-
+            <br></br>
+            <h1> Detalles Puesto de trabajo </h1>
+            <hr></hr>
+            <div className="formulario-2 formulario centro">
                 <input type="text" placeholder="Nombre del puesto"
                     onChange={(e) => {
                         setNombrePuesto(e.target.value);
@@ -137,7 +138,6 @@ const PuestoTrabajo = () => {
                     <option value="DEFAULT" disabled>Seleccione una opción</option>
                     <option value="1">SI</option>
                     <option value="2">NO</option>
-
                 </select>
 
                 <textarea type="text" placeholder="Detalles Control Horario" maxLength={500}

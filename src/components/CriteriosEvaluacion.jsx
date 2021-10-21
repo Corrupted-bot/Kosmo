@@ -3,6 +3,7 @@ import Axios from "axios";
 import Swal from 'sweetalert2';
 import { useHistory } from "react-router-dom";
 
+
 const CriteriosEvaluacion = () => {
     //Variables de entorno para capturar los datos del input 
     const [titulo, setTitulo] = useState("");
@@ -40,7 +41,9 @@ const CriteriosEvaluacion = () => {
 
     return (
         <div>
+            <br/>
             <h1>Criterios de Evaluacion</h1>
+            <hr></hr>
             <div className="formulario">
                 <label >Titulo</label>
                 <input type="text" placeholder="Escribe un titulo..." onChange={(e) => {
@@ -53,11 +56,6 @@ const CriteriosEvaluacion = () => {
 
                 <button className="bn5" onClick={formularioEvaluacion} > Guardar </button>
             </div>
-            {/* <hr></hr>
-            <button className="bn5" onClick={MostrarDatos} > Mostrar </button>
-            <hr></hr>
-            {tablaFuncion()} */}
-
         </div>
 
     )

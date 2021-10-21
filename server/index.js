@@ -114,6 +114,7 @@ app.post('/diagnostico', (req, res) => {
     const telefono = req.body.telefono;
     const cargo = req.body.cargo;
     const dotacion = req.body.dotacion;
+    
 
     db.query("INSERT INTO empresas (NombreEmpresa, RutEmpresa, Giro, Direccion, MailEmpresa, TelefonoEmpresa, CargoEmpresa, DotacionEmpresa) VALUES (?, ?,?,?,?,?,?,?)",[username, rut,giro,direccion,mail,telefono,cargo,dotacion], 
         (err, result) => {

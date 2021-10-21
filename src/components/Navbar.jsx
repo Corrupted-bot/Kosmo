@@ -1,14 +1,15 @@
 import { ButtonGroup } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import useAuth from "../auth/useAuth";
+import logo from "./styles/img/logo-kosmo-1.png"
 
 export default function Navbar() {
     const auth = useAuth();
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
-                    <NavLink to="/" exact className="btn btn-dark navbar-brand" activeClassName="active" >Inicio</NavLink>
+                    <NavLink to="/" exact className="btn  navbar-brand" activeClassName="active" ><img src={logo} width="50" height="50"></img></NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -38,11 +39,9 @@ export default function Navbar() {
                                     <li className="nav-item">
                                         <NavLink to="/dashboard" className="btn btn-dark" activeClassName="active">Dashboard</NavLink>
                                     </li>
-
-                                    <li className="nav-item ">
-                                        <ButtonGroup className="btn btn-dark " onClick={auth.logout}>Logout</ButtonGroup>
+                                    <li className="nav-item">
+                                        <ButtonGroup className="btn btn-dark " onClick={auth.logout}>Cerrar Sesion</ButtonGroup>
                                     </li>
-
                                 </>
                             )}
                         </ul>

@@ -10,6 +10,8 @@
     font-size: 1rem;
 }
 .card {
+    margin-top: 89px;
+    color: #000;
     border-top: 12px;
     max-height: 27vh;
 }

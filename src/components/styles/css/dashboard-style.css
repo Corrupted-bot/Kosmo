@@ -1,0 +1,25 @@
+.centro{
+    text-align: center;
+}
+.herramientas{
+    padding: 58.2px;
+    border-radius: 16.1px;
+    background: #212529;
+    border: black;
+    width: fit-content;
+    margin: 5em;
+    box-shadow: 10px 5px 5px black;
+    color: white;
+    height: 38rem;
+}
+.herramientas h2 {
+    text-align: center;
+}
+
+
+.datos-view{
+    text-align: center;
+    padding: 2rem;
+    color: black;
+    font-size: 300%;
+}

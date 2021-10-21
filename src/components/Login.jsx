@@ -10,7 +10,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
 
-
   // Variables necesarias para la redireccion
   let history = useHistory();
 
@@ -51,8 +50,6 @@ const Login = () => {
       }
     });
   }
-
-
 
   return (
     <div>

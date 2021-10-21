@@ -16,7 +16,6 @@ function Card({nombre, rut}) {
                 </p>
                 <button  className="bn4">Ver</button>
             </div>
-            
             </div>
         )
 
